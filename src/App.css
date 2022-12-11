@@ -10,25 +10,7 @@
   grid-gap: 10px;
 }
 
-.header {
-  grid-area: h;
-  background: rgb(3, 102, 160);
-}
 
-.header img {
-  width: 40px;
-}
 
-.nav {
-  grid-area: n;
-  background: rgb(3, 102, 160);
-}
 
-.content {
-  grid-area: c;
-  background: rgb(174, 221, 248);
-}
 
-.c_img {
-  max-width: 800px;
-}
