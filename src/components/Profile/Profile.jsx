@@ -11,7 +11,7 @@ const Profile = () => {
           src="https://public.realtysystems.ru/user/14624/13315/banners/6e4d3258cf787329ecd80804acece5e4.jpg"
         />
       </div>
-      <div> ava + description</div>
+      <div> New fucking post... </div>
       <MyPosts />
     </div>
   );
