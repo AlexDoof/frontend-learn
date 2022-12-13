@@ -1,0 +1,9 @@
+.wrapper {
+    overflow: hidden;
+}
+.descriptionBlock {
+    padding: 20px;
+}
+.ProfileInfo_img {   
+    max-width: 800px;
+}
