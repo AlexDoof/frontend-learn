@@ -1,42 +1,39 @@
 import React from "react";
 import classes from "./Dialogs.module.css";
-import { NavLink } from "react-router-dom";
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
-/* Компонента отдельного диалога */
-const DialogItem = (props) => {
-  let path = "/dialogs/" + props.id;
-  return (
-    <div className={`${classes.dialog} ${classes.active}`}>
-      <NavLink to={path}>{props.name}</NavLink>
-    </div>
-  );
-};
+/* Аля БД на серваке ( РЕДАКС) */
+let dialogsData = [                /* БД диалогов */
+  {id : 1, name: "Alexey"},
+  {id : 2, name: "Daniil"},
+  {id : 3, name: "Leonid"},
+  {id : 4, name: "Masha"},
+  {id : 5, name: "Arina"},
+  {id : 6, name: "Aleksandr"}
+]
 
-/* Компонента отдельного ТЕКСТА диалога */
-const Message = (props) => {
-  return (
-  <div className={classes.message}>{props.message}</div>
-  );
-};
+let messagesData = [                /* БД сообщений*/
+  {id : 1, message: "Hi!!!"},
+  {id : 2, message: "How are you?"},
+  {id : 3, message: "Yo ! =)"},
+  {id : 4, message: "Yo ! =)"},
+  {id : 5, message: "Yo ! =))"},
+  {id : 6, message: "Yo !!! =)"}
+]
 
 /* Компонента отрисовки всего блока ДИАЛОГОВ  */
 const Dialogs = (props) => {
   return (
     <div className={classes.dialogs}>
       <div className={classes.dialogsItems}>
-        <DialogItem name="Alexey" id="1" />
-        <DialogItem name="Daniil" id="2" />
-        <DialogItem name="Leonid" id="3" />
-        <DialogItem name="Masha" id="4" />
-        <DialogItem name="Arina" id="5" />
-        <DialogItem name="Aleksandr" id="6" />
+        <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
+        <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
+        
       </div>
       <div className={classes.messages}>
-        <Message message="Hi!!!"/>
-        <Message message="How are you?"/>
-        <Message message="Yo ! =)"/>
-        <Message message="Yo ! =)"/>
-        <Message message="Yo ! =)"/>
+        <Message message={messagesData[0].message}/>
+        <Message message={messagesData[1].message}/>
       </div>
     </div>
   );

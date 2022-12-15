@@ -7,7 +7,7 @@ const ProfileInfo = () => {
       <div>
         <img
           className={classes.ProfileInfo_img}
-          src="https://www.rabstol.net/uploads/gallery/comthumb/283/rabstol_net_thunderstorm_16.jpg"
+          src="https://zastavok.net/main/motocycles/165274046957.jpg"
           alt=""
         />
       </div>
