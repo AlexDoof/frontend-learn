@@ -7,25 +7,39 @@ import Message from "./Message/Message";
 const Dialogs = (props) => {
 
   /* МАПИМ массив dialogsData в массив JSX тегов  */
-  let dialogElements = props.state.dialogs.map((dialog) => (
+  let dialogElements = props.dialogsPage.dialogs.map((dialog) => (
     <DialogItem name={dialog.name} id={dialog.id} />
   ));
 
-  let messagesElements = props.state.messages.map((message) => (
+  let messagesElements = props.dialogsPage.messages.map((message) => (
     <Message message={message.message} />
   ));
-
-  let newMessage = React.createRef() ;
-  let sendMessage = () => {
-    alert(newMessage.current.value)
+  let newMessageElement = React.createRef();
+  
+  /* ф-я добавления нового сообщения*/
+  let  addMessage = () => {
+    props.addMessage();
   }
+
+  let onMessageChange = () => {
+    let text = newMessageElement.current.value;
+    props.updateNewMessageText(text);
+  };
 
   return (
     <div className={classes.dialogs}>
       <div className={classes.dialogsItems}>{dialogElements}</div>
       <div className={classes.messages}>{messagesElements}</div>
-      <textarea ref={newMessage}></textarea>
-      <button onClick={sendMessage}>Отправить сообщение</button>  
+
+      <textarea 
+      ref={newMessageElement}
+      onChange={onMessageChange}
+      value = {props.dialogsPage.newMessageText}
+      />
+
+      <button  onClick={addMessage}>
+        Отправить сообщение
+      </button>  
     </div>
   );
 };

@@ -9,6 +9,7 @@ import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+
 function App(props) {
 
   return (
@@ -18,8 +19,16 @@ function App(props) {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile state={props.state.profilePage} addPost={props.addPost}/>} />
-            <Route path="/dialogs" element={<Dialogs state={props.state.dialogsPage} />} />
+            <Route path="/profile" element={<Profile 
+            profilePage={props.state.profilePage} 
+            addPost={props.addPost}
+            updateNewPostText = {props.updateNewPostText}
+            />} />
+
+            <Route path="/dialogs" element={<Dialogs 
+            dialogsPage={props.state.dialogsPage} 
+            updateNewMessageText = {props.updateNewMessageText}
+            addMessage={props.addMessage}/>} />
 
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
