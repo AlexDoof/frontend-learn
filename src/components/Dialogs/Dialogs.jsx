@@ -3,27 +3,28 @@ import classes from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
+
 /* Компонента отрисовки всего блока ДИАЛОГОВ  */
 const Dialogs = (props) => {
 
-  /* МАПИМ массив dialogsData в массив JSX тегов  */
-  let dialogElements = props.dialogsPage.dialogs.map((dialog) => (
+  let state = props.dialogsPage;
+
+  let dialogElements = state.dialogs.map((dialog) => (
     <DialogItem name={dialog.name} id={dialog.id} />
   ));
 
-  let messagesElements = props.dialogsPage.messages.map((message) => (
+  let messagesElements = state.messages.map((message) => (
     <Message message={message.message} />
   ));
   let newMessageElement = React.createRef();
-  
-  /* ф-я добавления нового сообщения*/
-  let  addMessage = () => {
-    props.addMessage();
+
+  let addMessage = () => {
+    props.sendMessage();
   }
 
-  let onMessageChange = () => {
-    let text = newMessageElement.current.value;
-    props.updateNewMessageText(text);
+  let onMessageChange = (e) => {
+    let body = e.target.value;
+    props.updateNewMessageBody(body);
   };
 
   return (
@@ -31,15 +32,15 @@ const Dialogs = (props) => {
       <div className={classes.dialogsItems}>{dialogElements}</div>
       <div className={classes.messages}>{messagesElements}</div>
 
-      <textarea 
-      ref={newMessageElement}
-      onChange={onMessageChange}
-      value = {props.dialogsPage.newMessageText}
+      <textarea
+        ref={newMessageElement}
+        onChange={onMessageChange}
+        value={state.newMessageText}
       />
 
-      <button  onClick={addMessage}>
+      <button onClick={addMessage}>
         Отправить сообщение
-      </button>  
+      </button>
     </div>
   );
 };

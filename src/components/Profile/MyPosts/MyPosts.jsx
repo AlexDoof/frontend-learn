@@ -8,8 +8,9 @@ const MyPosts = (props) => {
   ));
 
   let newPostElement = React.createRef();
-/* ф-я добавления нового поста */
-  let addPost = () => {
+
+  /* ф-я добавления нового поста */
+  let onAddPost = () => {
     props.addPost();
   };
 
@@ -23,14 +24,14 @@ const MyPosts = (props) => {
       <h3>My posts</h3>
       <div>
         <textarea
-        placeholder="твое ебаное сообщение"
+          placeholder="твое ебаное сообщение"
           onChange={onPostChange}
           ref={newPostElement}
           value={props.newPostText}
         />
       </div>
       <div>
-        <button onClick={addPost}>Add post</button>
+        <button onClick={onAddPost}>Add post</button>
       </div>
       <div className={classes.posts}>{post}</div>
     </div>
