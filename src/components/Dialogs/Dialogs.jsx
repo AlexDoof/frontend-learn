@@ -3,18 +3,17 @@ import classes from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
-
 /* Компонента отрисовки всего блока ДИАЛОГОВ  */
 const Dialogs = (props) => {
 
   let state = props.dialogsPage;
 
   let dialogElements = state.dialogs.map((dialog) => (
-    <DialogItem name={dialog.name} id={dialog.id} />
+    <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} />
   ));
 
   let messagesElements = state.messages.map((message) => (
-    <Message message={message.message} />
+    <Message message={message.message} key={message.id}/>
   ));
   let newMessageElement = React.createRef();
 
@@ -38,7 +37,7 @@ const Dialogs = (props) => {
         value={state.newMessageText}
       />
 
-      <button onClick={addMessage}>
+      <button onClick={addMessage} className ={classes.dialogs_btn}>
         Отправить сообщение
       </button>
     </div>

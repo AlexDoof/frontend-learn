@@ -8,6 +8,7 @@ import Settings from './components/Settings/Settings';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UsersContainer from './components/users/UsersContainer'
 
 function App(props) {
 
@@ -23,12 +24,7 @@ function App(props) {
 
             <Route path="/profile" element={<Profile />} />
 
-
-
-
-
-
-
+            <Route path="/users" element={<UsersContainer/>} />
 
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
