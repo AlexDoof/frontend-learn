@@ -28,9 +28,7 @@ class ProfileContainer extends React.Component {
   }
 
   componentDidMount() {
-    
     this.redirectToMainUser();
-    
   }
 
   componentDidUpdate(prevProps) {
@@ -48,7 +46,6 @@ class ProfileContainer extends React.Component {
 
 const mapStateToProps = (state) => ({
   profile: state.profilePage.profile,
-  isFetching: state.auth.isFetching
 });
 
 const WithUrlDataContainerComponent = withRouter(ProfileContainer);
