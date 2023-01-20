@@ -40,8 +40,7 @@ export const authAPI = {
 // для ProfileContainer самостоятельно
 export const profileAPI = {
     getProfileUserId(userId) {
-        return instance.get(`profile/${userId}`)
-            .then((response) => {
+        return instance.get(`profile/${userId}`).then((response) => {
                 return response.data;
             });
     }

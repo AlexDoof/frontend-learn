@@ -6,6 +6,7 @@ import userPhoto from "../../../assets/images/unknown_user.jpg";
 
 
 const ProfileInfo = (props) => {
+  
   if (!props.profile) {
     return <Preloader />
   }
