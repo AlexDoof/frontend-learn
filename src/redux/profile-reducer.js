@@ -45,9 +45,10 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = () => { return { type: ADD_POST } }
-export const setUserProfile = (profile) => { return { type: SET_USER_PROFILE, profile } }
 export const updateNewPostTextActionCreator = (text) => { return { type: UPDATE_NEW_POST_TEXT, newText: text } }
+export const addPostActionCreator = () => { return { type: ADD_POST } }
+
+export const setUserProfile = (profile) => { return { type: SET_USER_PROFILE, profile } }
 
 export const userProfileTHUNK = (userId) => {
     return (dispatch) => {

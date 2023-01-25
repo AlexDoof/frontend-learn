@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './users.module.css';
 import userPhoto from "../../assets/images/unknown_user.jpg";
-import { NavLink } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
@@ -15,7 +15,7 @@ let Users = (props) => {
     let curPL = curP + 1;
     let slicedPages = pages.slice(curPF, curPL);
     //**************************************************************
-
+    
     return <div className={classes.wrapper}>
         <div>
             <span className={classes.inActivePage} onClick={() => { props.onPageChanged(1); }}>{`|<--`}</span>

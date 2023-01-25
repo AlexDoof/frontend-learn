@@ -24,7 +24,11 @@ export const usersAPI = {
     unfollow(userID)  {
        return  instance.delete
        (`https://social-network.samuraijs.com/api/1.0/follow/${userID}`)
-    }
+    },
+    getProfile(userId) {
+        return instance.get(`profile/${userId}`);
+        
+        }
 }
 
 // для HeaderContainer самостоятельно

@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UsersContainer from './components/users/UsersContainer'
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
+import LoginPage from './components/Login/Login';
 
 function App(props) {
 
@@ -21,6 +22,8 @@ function App(props) {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          
             <Route path="/dialogs" element={<DialogsContainer />} />
 
             <Route path="/profile" element={<ProfileContainer isMain={true} />} />
