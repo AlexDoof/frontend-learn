@@ -49,7 +49,7 @@ const mapStateToProps = (state) => ({
 export default compose(
   connect(mapStateToProps, { setUserProfile, userProfileTHUNK }),
   withRouter,
-  withAuthRedirect
+//  withAuthRedirect
 )(ProfileContainer)
 
 
